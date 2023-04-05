@@ -1,12 +1,18 @@
 /* base styles */
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
+}
+html {
+  font-size: 0.85em;
 }
 
 body {
   margin: 0;
-  color: #222;
-  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1b3838;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,7 +24,6 @@ h1 {
 
 h2 {
   font-size: 1.85rem;
-  color: #858585;
 }
 
 h3 {
@@ -28,7 +33,6 @@ h3 {
 
 h4 {
   font-size: 1.25rem;
-  color: #525252;
   margin: 0 0 0.25em;
 }
 
@@ -67,42 +71,46 @@ a:hover {
 nav a {
   display: block;
   font-size: 1.25rem;
-  color: #DD1F26;
+  color: #dd1f26;
   padding-bottom: 0.15em;
   border-bottom: 2px solid transparent;
-  font-weight: 500;
   text-decoration: none;
+  font-weight: 600;
 }
 
-nav a:hover, 
+nav a:hover,
 .nav-active {
   color: #5dabaa;
 }
 
 .categories a {
   font-weight: 500;
-  color: #605e5e;
+  color: #1b3838;
   text-decoration: none;
   padding: 0.25em 0.4em;
 }
-.categories a:hover, 
+
+.categories a:before {
+  content: "➜ ";
+}
+.categories a:hover,
 a.category-active {
   color: #fff;
-  background-color: #605e5e;
+  background-color: #1b3838;
   border-radius: 3px;
 }
 
 .session a {
   display: block;
-  color: rgb(56, 56, 56);
+  color: #1b3838;
   text-decoration: none;
   border: 1px solid currentColor;
   padding: 0.85em 1.125em;
   border-radius: 3px;
 }
 
-.session a:hover, 
-a.session-active {
+.session a:hover,
+.session a.active {
   color: #489b9a;
 }
 
@@ -141,7 +149,6 @@ ul.session-list {
 
 form {
   font-size: 1.25rem;
-  margin: 2em auto;
 }
 
 label {
@@ -216,11 +223,11 @@ footer.container {
 }
 
 @media (min-width: 768px) {
-  header, 
+  header,
   nav {
     display: flex;
     align-items: center;
-  } 
+  }
   header.container {
     margin-bottom: 1em;
   }
@@ -240,4 +247,13 @@ footer.container {
   form {
     width: 60%;
   }
+}
+.categories .active {
+  background-color: #dd1f26;
+  border-radius: 3px;
+  color: white;
+}
+nav a.active {
+  border-bottom: 3px solid #5dabaa;
+  color: #5dabaa;
 }
